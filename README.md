@@ -51,7 +51,7 @@ Bookmark Sage 是一个基于 AI 的 Chrome 浏览器扩展，能够智能地管
 
 
 ## 项目结构 
-... existing code ...
+```
 bookmark-sage/
 ├── src/
 │ ├── popup/ # 弹出窗口相关代码
@@ -60,7 +60,7 @@ bookmark-sage/
 │ └── utils/ # 工具类
 ├── assets/ # 图标等资源文件
 └── manifest.json # 扩展配置文件
-... existing code ...
+```
 
 ## 配置说明
 1. AI 服务配置
