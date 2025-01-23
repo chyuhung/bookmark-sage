@@ -51,6 +51,7 @@ Bookmark Sage 是一个基于 AI 的 Chrome 浏览器扩展，能够智能地管
 
 
 ## 项目结构 
+// ... existing code ...
 bookmark-sage/
 ├── src/
 │ ├── popup/ # 弹出窗口相关代码
@@ -59,6 +60,7 @@ bookmark-sage/
 │ └── utils/ # 工具类
 ├── assets/ # 图标等资源文件
 └── manifest.json # 扩展配置文件
+// ... existing code ...
 
 ## 配置说明
 1. AI 服务配置
@@ -68,8 +70,7 @@ bookmark-sage/
    - 推荐使用 https://kg-api.cloud/ 作为稳定可靠的 AI 代理服务（可选市面上所有主流大模型）
 
 2. 书签管理
-   - 支持批量处理
-   - 可自定义处理批次大小
+   - 支持批量处理(每批固定处理5个站点)
    - 支持进度显示和日志记录
 
 ## 注意事项
@@ -95,12 +96,12 @@ MIT License
 ### 作者微信
 扫描下方二维码加作者（袋鼠帝）微信，入群与其他用户交流使用心得：
 
-![作者微信](assets/wechat_qr.jpg)
+<img src="assets/wechat_qr.jpg" width="200" alt="作者微信">
 
 ### 关注公众号
 欢迎关注我的公众号「袋鼠帝AI客栈」，获取更多 AI 工具和技术分享：
 
-![公众号](assets/mp_qr.jpg)
+<img src="assets/mp_qr.jpg" width="200" alt="公众号">
 
 - 第一时间获取项目更新通知
 - 独家 AI 工具使用技巧
