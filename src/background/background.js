@@ -168,7 +168,7 @@ class BackgroundService {
         try {
             this.aiService = new AIService(
                 config.apiKey,
-                config.provider || 'openai',
+                config.provider || 'deepseek',
                 config.baseUrl || ''
             );
             if (config.model) {

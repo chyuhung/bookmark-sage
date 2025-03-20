@@ -1,9 +1,9 @@
 class AIService {
-    constructor(apiKey, provider = 'openai', baseUrl = '') {
+    constructor(apiKey, provider = 'deepseek', baseUrl = '') {
         this.apiKey = apiKey;
         this.provider = provider;
         this.baseUrl = baseUrl.trim();  // 确保去除空格
-        this.model = 'gpt-4o';  // 保持使用 gpt-4o 模型
+        this.model = 'deepseek-chat';  // 保持使用 deepseek-chat 模型
     }
 
     setModel(model) {
@@ -12,12 +12,18 @@ class AIService {
 
     // 调用 AI 服务的核心方法
     async callAI(prompt) {
-        // 如果设置了代理地址，需要确保它是完整的 API 路径
-        let url = this.baseUrl || 'https://api.openai.com/v1/chat/completions';
-        if (this.baseUrl && !this.baseUrl.endsWith('/v1/chat/completions')) {
-            url = this.baseUrl.replace(/\/?$/, '/v1/chat/completions');
+        let url;
+        if (this.provider === 'deepseek') {
+            url = this.baseUrl || 'https://api.deepseek.com/chat/completions'; // 更新为 DeepSeek API 地址
         }
-        
+        if (this.provider === 'openai') {
+            url = this.baseUrl || 'https://api.openai.com/v1/chat/completions'; // 更新为 OpenAI API 地址
+            // 如果设置了代理地址，需要确保它是完整的 API 路径
+            if (this.baseUrl && !this.baseUrl.endsWith('/v1/chat/completions')) {
+                url = this.baseUrl.replace(/\/?$/, '/v1/chat/completions');
+            }
+        }
+
         try {
             // 验证 URL 格式
             try {

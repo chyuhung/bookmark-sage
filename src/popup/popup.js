@@ -11,7 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // 根据provider显示/隐藏模型选择
     function updateModelSelectVisibility() {
         const modelGroup = document.getElementById('modelSelectGroup');
-        modelGroup.style.display = providerSelect.value === 'openai' ? 'block' : 'none';
+        const selectedProvider = providerSelect.value;
+
+        // 根据选择的提供者显示对应的模型选择
+        if (selectedProvider === 'deepseek') {
+            modelGroup.style.display = 'block';
+        } else if (selectedProvider === 'openai') {
+            modelGroup.style.display = 'block';
+        } else {
+            modelGroup.style.display = 'none'; // 隐藏模型选择
+        }
     }
 
     // 显示状态信息
@@ -56,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (result.model) {
             document.getElementById('model').value = result.model;
         } else {
-            document.getElementById('model').value = 'gpt-4o'; // 设置默认值
+            document.getElementById('model').value = 'deepseek-chat'; // 设置默认值
         }
         updateModelSelectVisibility();
         
